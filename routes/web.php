@@ -15,3 +15,8 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->middleware('guest');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('inicio', 'InicioController@index')->name('inicio');
+
+// Gestión de usuarios
+Route::get('users', 'OtherUserController@index')->name('users');
+Route::get('create', 'OtherUserController@create')->name('create');
+Route::post('create', 'OtherUserController@store')->name('create');

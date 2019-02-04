@@ -1,53 +1,4 @@
-
-
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-  }
- 
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
-  }
-.perfil{
-  width: 150px;
-  background-color: #555555;
-}
-.perf{
-  background-color: #F53B27;
-  width: 450px;
-}
-.col-sm-4 {
-  background-color: #5bc0de;
-}
-
-.show-grid {
-  background-color: #D3D3D3;
-}
-  /* Custom page CSS
-  -------------------------------------------------- */
-  /* Not required for template or sticky footer method. */
-  
-  body > .container {
-    padding: 60px 15px 0;
-  }
-  
-  .footer > .container {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
-@font-face {
+/* @font-face {
     font-family: Poppins-Regular;
     src: url('../fonts/poppins/Poppins-Regular.ttf'); 
   }
@@ -65,45 +16,24 @@ html {
   @font-face {
     font-family: Montserrat-Bold;
     src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
-  }
+  } */
   
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
-  
-  * {
+  /* * {
       margin: 0px; 
       padding: 0px; 
       box-sizing: border-box;
   }
-  
+  html {
+    position: relative;
+    min-height: 100%;
+  }
   body, html {
       height: 100%;
       font-family: Poppins-Regular, sans-serif;
   }
-  
-  /*---------------------------------------------*/
-  a {
-      font-family: Poppins-Regular;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #666666;
-      margin: 0px;
-      transition: all 0.4s;
-      -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
+  body > .container {
+    padding: 60px 15px 0;
   }
-  
-  a:focus {
-      outline: none !important;
-  }
-  
-  a:hover {
-      text-decoration: none;
-    color: #57b846;
-  }
-  
-  /*---------------------------------------------*/
   h1,h2,h3,h4,h5,h6 {
       margin: 0px;
   }
@@ -121,8 +51,6 @@ html {
       list-style-type: none;
   }
   
-  
-  /*---------------------------------------------*/
   input {
       outline: none;
       border: none;
@@ -157,7 +85,6 @@ html {
   textarea::-moz-placeholder { color: #999999; }
   textarea:-ms-input-placeholder { color: #999999; }
   
-  /*---------------------------------------------*/
   button {
       outline: none !important;
       border: none;
@@ -171,32 +98,17 @@ html {
   iframe {
       border: none !important;
   }
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Utility ]*/
-  .txt1 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #999999;
-  }
-  
-  .txt2 {
-    font-family: Poppins-Regular;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #666666;
-  }
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ login ]*/
-  
+
+  a:focus {
+      outline: none !important;
+  } */
+
+
+/* LOGIN */
   .limiter {
-    width: 100%;
-    margin: 0 auto;
-  }
+      width: 100%;
+      margin: 0 auto;
+    }
   
   .container-login100 {
     width: 100%;  
@@ -233,19 +145,6 @@ html {
     padding: 177px 130px 33px 95px;
   }
   
-  /*------------------------------------------------------------------
-  [  ]*/
-  .login100-pic {
-    width: 316px;
-  }
-  
-  .login100-pic img {
-    max-width: 100%;
-  }
-  
-  
-  /*------------------------------------------------------------------
-  [  ]*/
   .login100-form {
     width: 290px;
   }
@@ -262,8 +161,6 @@ html {
     padding-bottom: 54px;
   }
   
-  
-  /*---------------------------------------------*/
   .wrap-input100 {
     position: relative;
     width: 100%;
@@ -285,9 +182,6 @@ html {
     padding: 0 30px 0 68px;
   }
   
-  
-  /*------------------------------------------------------------------
-  [ Focus ]*/
   .focus-input100 {
     display: block;
     position: absolute;
@@ -350,8 +244,6 @@ html {
     padding-left: 28px;
   }
   
-  /*------------------------------------------------------------------
-  [ Button ]*/
   .container-login100-form-btn {
     width: 100%;
     display: -webkit-box;
@@ -393,112 +285,62 @@ html {
   .login100-form-btn:hover {
     background: #333333;
   }
-  
-  
-  
-  /*------------------------------------------------------------------
-  [ Responsive ]*/
-  
-  
-  
-  @media (max-width: 992px) {
-    .wrap-login100 {
-      padding: 177px 90px 33px 85px;
-    }
-  
-    .login100-pic {
-      width: 35%;
-    }
-  
-    .login100-form {
-      width: 50%;
-    }
+.login100-pic {
+    width: 316px;
   }
   
-  @media (max-width: 768px) {
-    .wrap-login100 {
-      padding: 100px 80px 33px 80px;
-    }
-  
-    .login100-pic {
-      display: none;
-    }
-  
-    .login100-form {
-      width: 100%;
-    }
+.login100-pic img {
+    max-width: 100%;
   }
-  
-  @media (max-width: 576px) {
-    .wrap-login100 {
-      padding: 100px 15px 33px 15px;
-    }
-  }
-  
-  
-  /*------------------------------------------------------------------
-  [ Alert validate ]*/
-  
-  .validate-input {
-    position: relative;
-  }
-  
-  .alert-validate::before {
-    content: attr(data-validate);
-    position: absolute;
-    max-width: 70%;
-    background-color: white;
-    border: 1px solid #c80000;
-    border-radius: 13px;
-    padding: 4px 25px 4px 10px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 8px;
-    pointer-events: none;
-  
-    font-family: Poppins-Medium;
-    color: #c80000;
+ .txt1 {
+    font-family: Poppins-Regular;
     font-size: 13px;
-    line-height: 1.4;
-    text-align: left;
-  
-    visibility: hidden;
-    opacity: 0;
-  
-    -webkit-transition: opacity 0.4s;
-    -o-transition: opacity 0.4s;
-    -moz-transition: opacity 0.4s;
-    transition: opacity 0.4s;
+    line-height: 1.5;
+    color: #999999;
   }
   
-  .alert-validate::after {
-    content: "\f06a";
-    font-family: FontAwesome;
-    display: block;
+  .txt2 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666666;
+  }
+
+  /* Class Show-Grid */
+ 
+.show-grid {
+  background-color: #D3D3D3;
+}
+.show-grid img{
+  width: 20px;
+}
+.show-grid a{
+  font-size: 15px;
+  color: black;
+}
+.show-grid  a:hover {
+    text-decoration: none;
+    color: #57b846;
+  }
+
+/* Footer */
+  /* .footer {
     position: absolute;
-    color: #c80000;
-    font-size: 15px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 13px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
   }
   
-  .alert-validate:hover:before {
-    visibility: visible;
-    opacity: 1;
-  }
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  } */
+ 
   
-  @media (max-width: 992px) {
-    .alert-validate::before {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
+  
+
+  
+
+  
