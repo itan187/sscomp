@@ -3,6 +3,16 @@
     <div class="container">
         @include('nav')
         <div class="row">
+            <div class="col-12">
+                @if (session()->has('info'))
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ session('info') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+            </div>
             <div class="col-12 mt-5">
                 <a href="{{ route('create') }}" class="btn btn-outline-primary float-left">Crear Usuario</a>
             </div>
@@ -25,13 +35,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($users as $index => $user)
                                     <tr>
-                                        <th scope="row">1</th>
+                                        <th scope="row">{{ $index +1}}</th>
                                         <td>{{ $user->nombre }}</td>
                                         <td>{{ $user->puesto }}</td>
                                         <td>{{ $user->area }}</td>
                                         <td>{{ $user->abreviacion }}</td>
+                                        <td>
+                                            <a href="{{ route('edit', $user->id) }}" class="btn btn-outline-info btn-sm btn-block">
+                                                Editar
+                                            </a>
+                                           <form method="POST" action="{{ route('destroy', $user->id) }}">
+                                            @csrf
+                                                <td>
+                                                    <button class="btn btn-outline-danger btn-sm btn-block">
+                                                        Eliminar
+                                                    </button>
+                                                </td>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

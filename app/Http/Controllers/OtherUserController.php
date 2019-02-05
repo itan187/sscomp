@@ -10,7 +10,7 @@ class OtherUserController extends Controller
     
     public function index(){
         $users = OtherUser::get();
-        return view('otherUsers', compact('users'));
+        return view('otherUsers', compact('users', 'count'));
     }
 
     public function create(){
@@ -34,7 +34,18 @@ class OtherUserController extends Controller
         $user->area = $request->area;
         $user->abreviacion = $request->abreviacion;
         $user->save();
-        
         return redirect()->route('users')->with('info', 'Usuario guardado con éxito');
+    }
+    public function edit(OtherUser $otheruser){
+        return view('edit', compact('otheruser'));
+    }
+
+    public function update(Request $request, OtherUser $otheruser){
+        $otheruser->update($request->except('password'));
+        return redirect()->route('users', $otheruser->id)->with('info', 'Usuario actualizado');;
+    }
+    public function destroy(OtherUser $otheruser){
+        $otheruser->delete();
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

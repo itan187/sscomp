@@ -20,3 +20,6 @@ Route::get('inicio', 'InicioController@index')->name('inicio');
 Route::get('users', 'OtherUserController@index')->name('users');
 Route::get('create', 'OtherUserController@create')->name('create');
 Route::post('create', 'OtherUserController@store')->name('create');
+Route::get('edit/{otheruser}', 'OtherUserController@edit')->name('edit');
+Route::post('edit/{otheruser}', 'OtherUserController@update')->name('update');
+Route::post('destroy/{otheruser}', 'OtherUserController@destroy')->name('destroy');
