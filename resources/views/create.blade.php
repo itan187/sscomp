@@ -1,14 +1,15 @@
 @extends('layout')
 
-@include('nav')
-<div class="container">
+@section('content')
+    <div class="container">
+    @include('nav')
     <div class="row">
         <div class="col-12">
             <h2>Crear Usuario</h2>
         </div>
     </div>
     <form method="POST" action="{{ route('create') }}">
-        @csrf
+        {{ csrf_field() }}
         <div class="row">
             <div class="col-4 offset-md-2">
                 <div class="form-group">
@@ -40,3 +41,4 @@
         </div>
 </form>
 </div>
+@endsection

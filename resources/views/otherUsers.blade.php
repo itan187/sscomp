@@ -1,10 +1,11 @@
 @extends('layout')
+
 @section('content')
+@include('nav')
     <div class="container">
-        @include('nav')
         <div class="row">
-            <div class="col-12">
-                @if (session()->has('info'))
+            <div class="col-12 mt-5">
+                 @if (session()->has('info'))
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <strong>{{ session('info') }}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -12,8 +13,6 @@
                         </button>
                     </div>
                 @endif
-            </div>
-            <div class="col-12 mt-5">
                 <a href="{{ route('create') }}" class="btn btn-outline-primary float-left">Crear Usuario</a>
             </div>
         </div>
