@@ -24,9 +24,7 @@ class LoginController extends Controller
         return back()->withErrors(['username' => trans('auth.failed')])
             ->withInput(request(['username']));
         }
-        
     }
-
     public function showLoginForm(){
         return view('login');
     }

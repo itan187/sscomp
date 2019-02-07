@@ -340,7 +340,15 @@
  
   
   
-
-  
+/* Projects */
+.nav-link{
+  color: #000000;
+}
+.icon-folder-open, .icon-pencil, .icon-picture, .icon-download{
+  font-size: 30px;
+}
+.custom-file-input:lang(en)~.custom-file-label:after {
+    content: "Buscar";
+}
 
   

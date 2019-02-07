@@ -24,16 +24,14 @@
                     <label>Puesto</label>
                     <input class="form-control" type="text" name="puesto" placeholder="Puesto">
                 </div>
-               
-               
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label>Nombre</label>
+                    <label>Área</label>
                     <input class="form-control" type="text" name="area" placeholder="Area">
                 </div>
                 <div class="form-group">
-                    <label>Nombre</label>
+                    <label>Abreviación</label>
                     <input class="form-control"  type="text" name="abreviacion" placeholder="Abreviacion">
                 </div>
             </div>

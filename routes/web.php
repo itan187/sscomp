@@ -23,3 +23,7 @@ Route::post('create', 'OtherUserController@store')->name('create');
 Route::get('edit/{otheruser}', 'OtherUserController@edit')->name('edit');
 Route::post('edit/{otheruser}', 'OtherUserController@update')->name('update');
 Route::post('destroy/{otheruser}', 'OtherUserController@destroy')->name('destroy');
+
+// Gestión de proyectos
+Route::get('projects', 'ProjectController@index')->name('projects');
+Route::post('projects', 'ProjectController@store')->name('projects');
