@@ -6,24 +6,33 @@
             </div>
         </div>
     </div>
-     <div class="row mt-4">
-         <h3>SOLICITUD DE COTIZACIÓN</h3>
-        <div class="col-3">
-            <b>No. de Cotización:</b> Prodemex 001 swj
-        </div>
-        
-     </div>
-     <form action="{{ route('projects') }}" method="post" enctype="multipart/form-data">
+
+    <form action="{{ route('projects') }}" method="post" enctype="multipart/form-data">
         @csrf
+        <div class="row mt-3">
+            <div class="col-12">
+                <h3>SOLICITUD DE COTIZACIÓN</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">No. de Cotización:</span>
+                    </div>
+                    <input type="text" class="form-control inp_folio" name="folio" aria-label="Sizing example input" readonly>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-5 offset-1">
                 <div class="form-group">
                     <label>Cliente</label>
-                    <input class="form-control" type="text" name="cliente" placeholder="Nombre del cliente">
+                    <input class="form-control cliente" type="text" name="cliente" placeholder="Nombre del cliente" >
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input class="form-control" type="email" name="email" placeholder="Email">
+                    <input class="form-control email" type="email" name="email" placeholder="Email">
                 </div>
             </div>
             <div class="col-5">
@@ -42,7 +51,7 @@
                         <label class="input-group-text" for="inputGroupSelect01">Enviado por:</label>
                     </div>
                     <select class="custom-select" id="inputGroupSelect01" name="encargado">
-                        <option selected>Selecciona Encargado...</option>
+                        <option disabled selected>Selecciona Encargado...</option>
                         @foreach ($users as $user)
                             <option value="{{ $user->nombre }}">{{ $user->nombre }}</option>
                         @endforeach
@@ -74,4 +83,8 @@
             </div>
         </div>
      </form>
+     {{-- Se pasa el conteo de cotizaciones a javascript --}}
+     <form action="">
+            <input type="hidden" id="folio" data-folio="{{ $totalQuotations }}">
+        </form>
 </div>

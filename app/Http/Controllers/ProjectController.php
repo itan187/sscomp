@@ -16,7 +16,8 @@ class ProjectController extends Controller
     public function index()
     {
         $users = OtherUser::get();
-        return view('projects.index', compact('users'));
+        $totalQuotations = Quotation::count() +1;
+        return view('projects.index', compact('users', 'totalQuotations'));
     }
 
     /**
@@ -54,6 +55,7 @@ class ProjectController extends Controller
             $file->move(public_path() . '/cotizaciones/', $name);
         }
         $quotation = new Quotation;
+        $quotation->folio = $request->folio;
         $quotation->cliente = $request->cliente;
         $quotation->email = $request->email;
         $quotation->anticipo = $request->anticipo;
@@ -67,7 +69,7 @@ class ProjectController extends Controller
         // Guardarlo en storage/public
         //  dd($request->file('file')->store('public'));
         //  return back()->with('info', 'Cotización creada');
-        return redirect()->route('projects')->with('info', 'Cotización guardada');
+        return redirect()->route('projects.index')->with('info', 'Cotización guardada');
 ;    }
 
     /**

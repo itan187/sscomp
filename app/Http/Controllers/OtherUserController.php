@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class OtherUserController extends Controller
 {
-    
+
     public function index(){
         $users = OtherUser::get();
         return view('otherUsers', compact('users', 'count'));
@@ -18,7 +18,7 @@ class OtherUserController extends Controller
     }
 
     public function store(Request $request){
-
+       
         $request->validate([
             'nombre' => 'required',
             'password' => 'required',
@@ -26,7 +26,6 @@ class OtherUserController extends Controller
             'area' => 'required',
             'abreviacion' => 'required',
         ]);
-        
         $user = new OtherUser;
         $user->nombre = $request->nombre;
         $user->password = bcrypt($request->description);

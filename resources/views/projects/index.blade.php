@@ -20,17 +20,17 @@
                 </a>
             </li>
             <li class="nav-item flex-fill text-center">
-                <a class="nav-link disabled" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
                     <i class="icon-pencil"></i>
                 </a>
             </li>
             <li class="nav-item flex-fill text-center">
-                <a class="nav-link disabled" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">
+                <a class="nav-link " id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">
                     <i class="icon-picture"></i>
                 </a>
             </li>
             <li class="nav-item flex-fill text-center">
-                <a class="nav-link disabled" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
+                <a class="nav-link " id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
                     <i class="icon-download"></i>
                 </a>
             </li>

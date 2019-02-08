@@ -350,5 +350,9 @@
 .custom-file-input:lang(en)~.custom-file-label:after {
     content: "Buscar";
 }
+.inp_folio{
+  background-color: #55535360 !important;
+  color: #fff !important;
+}
 
   
