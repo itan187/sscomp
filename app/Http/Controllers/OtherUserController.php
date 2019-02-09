@@ -40,7 +40,13 @@ class OtherUserController extends Controller
     }
 
     public function update(Request $request, OtherUser $otheruser){
-        $otheruser->update($request->except('password'));
+        $request->validate([
+            'nombre' => 'required',
+            'puesto' => 'required',
+            'area' => 'required',
+            'abreviacion' => 'required',
+        ]);
+
         return redirect()->route('users', $otheruser->id)->with('info', 'Usuario actualizado');;
     }
     public function destroy(OtherUser $otheruser){

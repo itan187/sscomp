@@ -46,12 +46,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceOf \Illuminate\Auth\AuthenticationException) {
+        if ($exception instanceof \Illuminate\Auth\AuthenticationException) {
             return redirect('/')->with('info', 'Por favor inicia sesión');
         }
-        // return parent::render($request, $exception);
+        if ($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException) {
+            return redirect('/')->with('info', 'Por favor inicia sesión');
+        }
+        return parent::render($request, $exception);
         // return redirect('/');
-        return redirect()->back();
+        // return redirect()->back();
     }
     
 }
