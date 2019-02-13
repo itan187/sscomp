@@ -46,7 +46,7 @@ class OtherUserController extends Controller
             'area' => 'required',
             'abreviacion' => 'required',
         ]);
-
+        $otheruser->update($request->except('password'));
         return redirect()->route('users', $otheruser->id)->with('info', 'Usuario actualizado');;
     }
     public function destroy(OtherUser $otheruser){
