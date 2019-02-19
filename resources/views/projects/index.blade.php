@@ -16,17 +16,17 @@
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item flex-fill text-center">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                     <i class="icon-folder-open"></i>
+                     <i class="icon-folder-open">Cotizacion</i>
                 </a>
             </li>
             <li class="nav-item flex-fill text-center">
                 <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                    <i class="icon-pencil"></i>
+                    <i class="icon-pencil">Pedimento</i>
                 </a>
             </li>
             <li class="nav-item flex-fill text-center">
                 <a class="nav-link " id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">
-                    <i class="icon-picture"></i>
+                    <i class="icon-picture">Orden de Compra</i>
                 </a>
             </li>
             <li class="nav-item flex-fill text-center">

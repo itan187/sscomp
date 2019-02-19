@@ -6,5 +6,8 @@
             </div>
         </div>
     </div>
+
+
+    A partir de aquí va el Step 2
 </div>
 

@@ -8,7 +8,7 @@
                     <div class="card-body show-grid">
                         <div class="row">
                             <div class="col">
-                            <img src="{{ asset('img/carpeta.png') }}"> <label>Gestion de Clientes</label>
+                            <a href="{{ route('clients') }}"> <img src="{{ asset('img/carpeta.png') }}"> <label>Gestion de Clientes</label>
                         </div>
                         <div class="col">
                             <a href="{{ route('projects') }}"><img src="{{ asset('img/archivo.png') }}"><label>Gestion de Proyectos</label></a>

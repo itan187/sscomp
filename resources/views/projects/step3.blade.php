@@ -6,4 +6,6 @@
             </div>
         </div>
     </div>
+
+    Aquí va todo del step 3
 </div>

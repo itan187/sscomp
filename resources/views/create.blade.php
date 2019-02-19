@@ -41,6 +41,7 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-block btn-outline-success">Guardar</button>
+            <a href="{{ route('users') }}" class="btn btn-outline-primary float-left">Volver</a>
         </div>
 </form>
 </div>

@@ -69,7 +69,7 @@ class ProjectController extends Controller
         // Guardarlo en storage/public
         //  dd($request->file('file')->store('public'));
         //  return back()->with('info', 'Cotización creada');
-        return redirect()->route('projects.index')->with('info', 'Cotización guardada');
+        return redirect()->route('projects')->with('info', 'Cotización guardada');
 ;    }
 
     /**

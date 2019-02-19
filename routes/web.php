@@ -27,3 +27,11 @@ Route::post('destroy/{otheruser}', 'OtherUserController@destroy')->name('destroy
 // Gestión de proyectos
 Route::get('projects', 'ProjectController@index')->name('projects');
 Route::post('projects', 'ProjectController@store')->name('projects');
+
+//Gestion de Clientes 
+Route::get('clients','ClientController@index')->name('clients');
+Route::get('createCl', 'ClientController@createCl')->name('createCl');
+Route::post('createCl','ClientController@saveCl')->name('createCl');
+Route::get('editCl/{client}', 'ClientController@editCl')->name('editCl');
+Route::post('editCl/{client}', 'ClientController@update')->name('updateCl');
+Route::post('destroyCl/{client}', 'ClientController@destroyCl')->name('destroyCl');
