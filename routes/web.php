@@ -28,6 +28,11 @@ Route::post('destroy/{otheruser}', 'OtherUserController@destroy')->name('destroy
 Route::get('projects', 'ProjectController@index')->name('projects');
 Route::post('projects', 'ProjectController@store')->name('projects');
 
+//editar Step
+Route::get('EditStep1', 'Projectcontroller@update')->name('EditStep1');
+
+#cotizacion 
+
 //Gestion de Clientes 
 Route::get('clients','ClientController@index')->name('clients');
 Route::get('createCl', 'ClientController@createCl')->name('createCl');
@@ -35,3 +40,11 @@ Route::post('createCl','ClientController@saveCl')->name('createCl');
 Route::get('editCl/{client}', 'ClientController@editCl')->name('editCl');
 Route::post('editCl/{client}', 'ClientController@update')->name('updateCl');
 Route::post('destroyCl/{client}', 'ClientController@destroyCl')->name('destroyCl');
+
+
+#descargar archivos
+Route::get('/download/{file}' , 'ProjectController@downloadFile')->name('download');
+#eliminar archivo de carpeta
+//Route::get('/deleted/{file}','ProjectController@deletedFile')->name('deleted');
+Route::post('/deleted/{id}','ProjectController@destroy')->name('quotation.deleted');
+

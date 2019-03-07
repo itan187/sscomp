@@ -42,7 +42,7 @@ class ClientController extends Controller
             'telefono' => 'required'
         ]);
        $client->update($request->except('password'));
-        return redirect()->route('clients', $client->id)->with('info', 'Cliente actualizado');;
+        return redirect()->route('clients', $client->id)->with('info', 'Cliente actualizado');
     }
     public function destroyCl(Client $client){
         $client->delete();

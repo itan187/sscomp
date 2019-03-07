@@ -14,15 +14,13 @@ class CreateQuotationsTable extends Migration
     public function up()
     {
         Schema::create('quotations', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('quotation_id');
             $table->string('folio'); 
-            $table->string('cliente', 40); 
-            $table->string('email', 40); 
-            $table->string('anticipo', 40);
-            $table->string('telefono');
-            $table->string('encargado', 40);
-            $table->string('nombreArchivo', 40);
-            $table->string('archivo');
+            $table->string('cliente'); 
+            $table->string('payed');
+            $table->string('assigned_to');
+            $table->string('file_name');
+            $table->string('file_path');
             $table->timestamps();
         });
     }

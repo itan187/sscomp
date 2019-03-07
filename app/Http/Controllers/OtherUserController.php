@@ -50,6 +50,7 @@ class OtherUserController extends Controller
         return redirect()->route('users', $otheruser->id)->with('info', 'Usuario actualizado');;
     }
     public function destroy(OtherUser $otheruser){
+        return $otheruser;
         $otheruser->delete();
         return back()->with('info', 'Eliminado correctamente');
     }

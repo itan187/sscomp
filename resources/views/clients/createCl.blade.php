@@ -24,10 +24,10 @@
                 </div>
             </div>
             <div class="col-4">
-                <div class="form-group {{ $errors->has('telefono') ? 'has-danger' : '' }}">
+                <div class="form-group {{ $errors->has('area') ? 'has-danger' : '' }}">
                     <label>Área</label>
-                    <input class="form-control" type="text" name="telefono" placeholder="telefono">
-                    {!! $errors->first('telefono', '<span class="help-block">:message</span>') !!}
+                    <input class="form-control" type="text" name="area" placeholder="area">
+                    {!! $errors->first('area', '<span class="help-block">:message</span>') !!}
                 </div>
                 
             </div>

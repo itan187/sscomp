@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Quotation extends Model
 {
     protected $fillable = [
-        'cliente', 'email', 'anticipo', 'telefono', 'encargado', 'nombreArchivo', 'archivo'
+       'folio','cliente', 'email', 'anticipo', 'contact', 'encargado', 'nombreArchivo', 'archivo'
     ];
 }

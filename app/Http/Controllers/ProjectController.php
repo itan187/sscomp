@@ -13,12 +13,21 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
+
     public function index()
     {
         $users = OtherUser::get();
+        
+        $quotations = Quotation::get();
+
         $totalQuotations = Quotation::count() +1;
-        return view('projects.index', compact('users', 'totalQuotations'));
+       // return $users;
+        return view('projects.index', compact('users', 'totalQuotations','quotations'));
     }
+
+  
 
     /**
      * Show the form for creating a new resource.
@@ -30,6 +39,7 @@ class ProjectController extends Controller
         //
     }
 
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -41,9 +51,8 @@ class ProjectController extends Controller
         $request->validate([
             'archivo' => 'required|mimes:pdf,docx',
             'cliente' => 'required',
-            'email' => 'required',
             'anticipo' => 'required',
-            'telefono' => 'required',
+            'contacto'=>'required',
             'encargado' => 'required|string|not_in:Selecciona Encargado...',
             'nombreArchivo' => 'required',
         ]);
@@ -57,9 +66,8 @@ class ProjectController extends Controller
         $quotation = new Quotation;
         $quotation->folio = $request->folio;
         $quotation->cliente = $request->cliente;
-        $quotation->email = $request->email;
         $quotation->anticipo = $request->anticipo;
-        $quotation->telefono = $request->telefono;
+        $quotation->contact = $request->contacto;
         $quotation->encargado = $request->encargado;
         $quotation->nombreArchivo = $request->nombreArchivo;
         $quotation->archivo = $name;
@@ -70,8 +78,13 @@ class ProjectController extends Controller
         //  dd($request->file('file')->store('public'));
         //  return back()->with('info', 'Cotización creada');
         return redirect()->route('projects')->with('info', 'Cotización guardada');
-;    }
+      }
 
+
+      public function downloadFile($file){
+        $pathtoFile = public_path().'/cotizaciones/'.$file;
+        return response()->download($pathtoFile);
+    }
     /**
      * Display the specified resource.
      *
@@ -104,6 +117,16 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $quotation->validate([
+            'archivo' => 'required|mimes:pdf,docx',
+            'cliente' => 'required',
+            'anticipo' => 'required',
+            'contacto'=>'required',
+            'encargado' => 'required|string|not_in:Selecciona Encargado...',
+            'nombreArchivo' => 'required',
+        ]);
+       $quotation->update($request->except('password'));
+        return redirect()->route('$quotation', $quotation->id)->with('info', 'Cotizacion actualizada'); 
     }
 
     /**
@@ -114,6 +137,20 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //eliminar de bd archivo 
+        $quotation = Quotation::find($id);
+        $pathtoFile = public_path().'\cotizaciones\\'. $quotation->archivo;
+        $this->deletedFile($pathtoFile);
+        $quotation->delete();
+        return back()->with('info', 'Eliminado correctamente');
     }
+
+    public function deletedFile($file){
+        
+          if(\File::exists($file)){
+                 \File::delete($file);
+         }else{
+            return back()->with('info', 'No sé pudo eliminar, ni idea porque');
+         }
+     }
 }

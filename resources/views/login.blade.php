@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     {{ csrf_field() }}
-                    <span class="login100-form-title"><strong>LOGIN SSCOMP</strong></span>
+                    <span class="login100-form-title"><strong>SSCOMP</strong></span>
                     <div class="wrap-input100">
                         <input class="input100" type="text" name="username"  placeholder="Usuario" value="{{ old('username') }}">
                         {!! $errors->first('username', '<span class="help-block">:message</span>') !!}

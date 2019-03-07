@@ -1,4 +1,4 @@
- <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+<div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <div class="row">
         <div class="col-12">
             <div class="progress">
@@ -24,7 +24,7 @@
                     <input type="text" class="form-control inp_folio" name="folio" aria-label="Sizing example input" readonly>
                 </div>
             </div>
- 
+           
             <div class="col-6">
                 <select class="custom-select" id="inputGroupSelect01" name="coti">
                     <option disabled selected>Selecciona Cotizacion...</option>
@@ -98,25 +98,19 @@
             </div>
         </div>
 
-    </form>
-    @foreach ($quotations as $item)
-    
-    <div class="row">
-        <div class="col">
-            {{-- <a href="{{ route('download', $item->archivo ) }}">{{ asset('cotizaciones/' . $item->archivo) }}</a> --}}
-            {{ $item->archivo }}
-            {{-- -<a href="{{ route('download', '1549643113CodeIgniter_Guia_Usuario_2.1.0.pdf' ) }}"> --}}
-                {{--  </a>  --}}
-                <a href="{{ route('download', $item->archivo ) }}"> Descargar </a>
-                
-                <form action="{{ route('quotation.deleted', $item->id) }}" method="post">
-                        @csrf
-                            {{--  <a href="{{ route('deleted', $item->id ) }}">Eliminar </a>  --}}
-                            <button class="btn btn-danger">Eliminar</button>
-                </form>
-        </div>
+        <div class="row">
+                <div class="col">
+                    @foreach ($quotations as $item)
+                        {{-- <a href="{{ route('download', $item->archivo ) }}">{{ asset('cotizaciones/' . $item->archivo) }}</a> --}}
+                        <h4>{{ $item->archivo }}</h4>
+                         {{-- -<a href="{{ route('download', '1549643113CodeIgniter_Guia_Usuario_2.1.0.pdf' ) }}"> --}}
+                        </a>
+                        <a href="{{ route('download', $item->archivo ) }}">Descargar </a>
+                    @endforeach
+                </div>
             </div>
-    @endforeach
+     </form>
+
      {{-- Se pasa el conteo de cotizaciones a javascript --}}
      <form action="">
             <input type="hidden" id="folio" data-folio="{{ $totalQuotations }}">
